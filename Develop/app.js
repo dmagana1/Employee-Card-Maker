@@ -122,27 +122,27 @@ function createTeam() {
         type:"list",
         name:"employees",
         message:"Would You like to add more Employees?",
-        Choices:["Manger", "Engineer", "Intern", "None"]
+        choices:["Manger", "Engineer", "Intern", "None"]
     }
-   ]).then((answers) => {
-           switch (answers.add) {
-               case "Engineer":
-                   addEngineer();
-                   break;
-               case "Intern":
-                   addIntern();
-                   break;
-               default:
-                   buildTeam();
-           }
-       });
+]).then((answers) => {
+    switch (answers.teamMembers) {
+        case "Engineer":
+            addEngineer();
+            break;
+        case "Intern":
+            addIntern();
+            break;
+        default:
+            buildTeam();
+    }
+});
 }
 function buildTeam() {
-    const renderEmployees = render(employees);
-    fs.writeFileSync("./team.html", renderEmployees, function (error) {
+    const renderteamMembers = render(teamMembers);
+    fs.writeFile("./team.html", renderteamMembers, function (error) {
         if (error) {
             return console.log(error);
         }
-        console.log("Finish");
+        console.log("You Have Created Your Team Profile");
     })
 }
