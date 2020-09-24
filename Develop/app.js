@@ -10,6 +10,7 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+
 const teamMembers = [];
     
 createManager();
@@ -37,15 +38,14 @@ createManager();
             message:"Enter Manger's Office Number"
         },
     ]).then((answers) => {
-        let manger = new Manager(
+        let manager = new Manager(
             answers.name,
             answers.email,
             answers.id,
             answers.num
         );
-    teamMembers.push(manger);
-        createTeam(); 
-
+        teamMembers.push(manager);
+        createTeam();
     });
 }
 
@@ -78,16 +78,16 @@ function addEngineer() {
         answers.git
     );
     teamMembers.push(engineer);
-        createTeam(); 
+         createTeam(); 
 
-    })
+    });
 }
 
 function addIntern() {
     inquirer.prompt([{
         type:"input",
         name:"name",
-        message:"Enter Interns name"
+        message:"Enter Interns Name"
     },
     {
         type:"input",
@@ -112,9 +112,9 @@ function addIntern() {
         answers.school
     );
     teamMembers.push(intern);
-     createTeam(); 
+    createTeam(); 
 
-    })
+    });
 }
 function createTeam() {
 
@@ -125,7 +125,7 @@ function createTeam() {
         choices:["Manger", "Engineer", "Intern", "None"]
     }
 ]).then((answers) => {
-    switch (answers.teamMembers) {
+    switch (answers.employees) {
         case "Engineer":
             addEngineer();
             break;
