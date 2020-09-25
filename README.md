@@ -3,5 +3,6 @@ This proejct was about creating a team profile that contains one Manager, three 
 
 Link to Video about the project: https://drive.google.com/file/d/1MapO3LZvZPHi4En6cu5DfnAVq2iJyuoS/view?usp=sharing
 
-![GitHub Logo](/images/logo.png)
-Format: ![Alt Text](url)
+#This is a link to a picture of my project
+
+https://drive.google.com/file/d/1GpvWfkD_lSMnqYm-kGx27nv56XOx_vA8/view?usp=sharing
